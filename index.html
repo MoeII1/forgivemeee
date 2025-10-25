@@ -10,7 +10,8 @@
     color: #fff;
     font-family: "Trebuchet MS", sans-serif;
     text-align: center;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto; /* allow scrolling on small screens */
   }
 
   #scene {
@@ -20,27 +21,34 @@
   }
 
   #dialogue {
-    position: absolute;
+    position: fixed; /* keep it visible on scroll */
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
+    width: 90%;
+    max-width: 480px;
     background: rgba(0,0,0,0.6);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.4;
+    z-index: 1000;
   }
 
   #next {
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
     background: #e94560;
     border: none;
     color: white;
-    padding: 12px 30px;
+    padding: 10px 25px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     transition: 0.3s;
+    z-index: 1000;
   }
 
   #next:hover {
@@ -51,11 +59,12 @@
     background: #4b8cff;
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 8px;
     margin: 5px;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 15px;
+    white-space: nowrap;
   }
 
   #choices button:hover {
@@ -64,21 +73,21 @@
 
   .character {
     position: absolute;
-    bottom: 100px;
-    width: 200px;
+    bottom: 80px;
+    width: 120px; /* smaller for mobile */
     transition: all 1s ease;
   }
 
   #moe {
-    left: -250px;
+    left: -150px;
     background: url('https://i.imgur.com/tBuVyqi.png') center/contain no-repeat;
-    height: 300px;
+    height: 180px;
   }
 
   #denasia {
-    right: -250px;
+    right: -150px;
     background: url('https://i.imgur.com/fdqX7Pb.png') center/contain no-repeat;
-    height: 300px;
+    height: 180px;
   }
 
   .fade-in {
@@ -88,6 +97,41 @@
   @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
+  }
+
+  /* MEDIA QUERY FOR PHONES */
+  @media (max-width: 600px) {
+    #dialogue {
+      font-size: 14px;
+      padding: 12px;
+      width: 95%;
+    }
+
+    #next {
+      font-size: 14px;
+      padding: 8px 20px;
+      bottom: 70px;
+    }
+
+    #choices button {
+      font-size: 13px;
+      padding: 6px 12px;
+    }
+
+    .character {
+      width: 100px;
+      bottom: 60px;
+    }
+
+    #moe {
+      height: 150px;
+      left: -120px;
+    }
+
+    #denasia {
+      height: 150px;
+      right: -120px;
+    }
   }
 </style>
 </head>
@@ -272,3 +316,4 @@ function denasiaResponse(choice) {
 </script>
 </body>
 </html>
+
