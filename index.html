@@ -4,14 +4,13 @@
 <meta charset="UTF-8">
 <title>The Fool & Princess Denasia: The Quest for Baklava and Forgiveness</title>
 <style>
-  /* Body and Scene */
   body {
     margin: 0;
     background: linear-gradient(to bottom, #1a1a2e, #16213e);
     color: #fff;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: "Trebuchet MS", sans-serif;	
     text-align: center;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   #scene {
@@ -20,32 +19,28 @@
     width: 100vw;
   }
 
-  /* Dialogue Box */
   #dialogue {
     position: absolute;
-    bottom: 15px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
-    max-width: 500px;
-    background: rgba(0,0,0,0.7);
-    padding: 15px;
-    border-radius: 12px;
-    font-size: 16px;
-    line-height: 1.5;
+    width: 80%;
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 1.6;
   }
 
-  /* Buttons */
   #next {
     background: #e94560;
     border: none;
     color: white;
-    padding: 10px 25px;
-    border-radius: 10px;
+    padding: 12px 30px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     transition: 0.3s;
-    margin-top: 10px;
   }
 
   #next:hover {
@@ -56,78 +51,43 @@
     background: #4b8cff;
     border: none;
     color: white;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 8px;
-    margin: 4px;
+    margin: 5px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 17px;
   }
 
   #choices button:hover {
     background: #77a8ff;
   }
 
-  /* Characters */
   .character {
     position: absolute;
-    bottom: 80px;
-    width: 35vw;
-    max-width: 220px;
+    bottom: 100px;
+    width: 200px;
     transition: all 1s ease;
   }
 
   #moe {
-    left: -50vw;
+    left: -250px;
     background: url('https://i.imgur.com/tBuVyqi.png') center/contain no-repeat;
-    height: 40vh;
-    max-height: 280px;
+    height: 300px;
   }
 
   #denasia {
-    right: -50vw;
+    right: -250px;
     background: url('https://i.imgur.com/fdqX7Pb.png') center/contain no-repeat;
-    height: 40vh;
-    max-height: 280px;
+    height: 300px;
   }
 
-  /* Fade Animation */
   .fade-in {
-    animation: fadeIn 0.8s ease;
+    animation: fadeIn 1s ease;
   }
 
   @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
-  }
-
-  /* Mobile tweaks */
-  @media only screen and (max-width: 480px) {
-    #dialogue {
-      font-size: 14px;
-      padding: 12px;
-    }
-
-    #next {
-      padding: 8px 20px;
-      font-size: 15px;
-    }
-
-    #choices button {
-      padding: 6px 12px;
-      font-size: 14px;
-    }
-
-    .character {
-      bottom: 60px;
-      width: 45vw;
-      max-width: 180px;
-      height: auto;
-    }
-
-    #moe, #denasia {
-      height: 35vh;
-      max-height: 220px;
-    }
   }
 </style>
 </head>
@@ -312,5 +272,3 @@ function denasiaResponse(choice) {
 </script>
 </body>
 </html>
-
-
